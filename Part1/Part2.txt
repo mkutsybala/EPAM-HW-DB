@@ -1,0 +1,55 @@
+//---------------------------------------------------------------------------------
+query:
+ALTER TABLE instance DROP COLUMN name;
+result:
+id      i_type  	state   vpc_id  availability_zone_id    owner_id
+1       t2.micro        running 10      1       		2
+2       t2.xlarge       running 3       2       		8
+3       t2.large        running 3       2       		8
+4       t2.large        running 2       7       		4
+5       t2.xlarge       running 7       5       		8
+6       t2.xlarge       running 2       6       		5
+7       t2.xlarge       running 2       6       		5
+8       t2.xlarge       running 2       6       		5
+9       t2.xlarge       running 2       6       		5
+11      t2.nano 	running 2       8       		2
+12      t2.nano 	running 3       7       		2
+13      t2.nano 	running 4       5       		2
+14      t2.nano 	running 3       4       		2
+15      t2.nano 	running 8       4       		2
+16      t2.xlarge       running 6       3       		9
+17      t2.xlarge       running 5       1       		7
+//---------------------------------------------------------------------------------
+query:
+show tables;
+result:
+Tables_in_ec2
+availability_zone
+instance
+security_group
+user
+vpc
+//---------------------------------------------------------------------------------
+query:
+show tables;
+result:
+Tables_in_ec2
+availability_zone
+security_group
+user
+vpc
+//---------------------------------------------------------------------------------
+query:
+sudo mysql -Dec2 < ec2_backup.sql
+result:
+//---------------------------------------------------------------------------------
+query:
+show tables;
+result:
+Tables_in_ec2
+availability_zone
+instance
+security_group
+user
+vpc
+
